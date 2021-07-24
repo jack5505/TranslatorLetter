@@ -14,6 +14,7 @@ import java.util.Scanner;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
+import uzb.transfer.letter.utils.Db;
 
 /*
  *
@@ -30,11 +31,12 @@ public class SettingsController implements Initializable {
 
     @Override public void initialize(URL location, ResourceBundle resources) {
            combo.getItems().addAll(readFromText());
+           combo.getSelectionModel().select(Db.checkSelectedLanguage());
     }
 
     private List<String> readFromText() {
             List<String> list = new ArrayList<>();
-            Scanner scanner = readFromFile();
+            Scanner scanner = Db.readFromFile(Db.transferDirectionList);
             if(scanner != null){
               while (scanner.hasNext()){
                   list.add(scanner.nextLine());
@@ -43,25 +45,7 @@ public class SettingsController implements Initializable {
         return list;
     }
 
-    private Scanner readFromFile(){
-        try {
-            checkFile();
-            Scanner cin = new Scanner(new FileReader("db.txt"));
-            return cin;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
-    private void checkFile() throws IOException {
-        File file = new File("db.txt");
-        if(file.createNewFile()){
-            System.out.println("file created");
-        }else{
-            System.out.println("File existed");
-        }
-    }
+
+
 }
