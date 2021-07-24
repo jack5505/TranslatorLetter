@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
@@ -31,6 +33,16 @@ public class SettingsController implements Initializable {
 
     @Override public void initialize(URL location, ResourceBundle resources) {
            combo.getItems().addAll(readFromText());
+           combo.valueProperty().addListener(new ChangeListener() {
+               @Override public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                   //This begining of this
+                   if(oldValue == null){
+
+                   }else{
+                       // this change value
+                   }
+               }
+           });
            combo.getSelectionModel().select(Db.checkSelectedLanguage());
     }
 
