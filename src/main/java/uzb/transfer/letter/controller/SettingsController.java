@@ -54,6 +54,8 @@ public class SettingsController implements Initializable {
 
            add.setOnAction(event -> {
                Window window = new Window("Add or modify", Windows.Main.add);
+               AddModifyController addModifyController = window.getController();
+               addModifyController.setDirectionTransfer(combo.getSelectionModel().getSelectedItem().toString());
                window.show();
            });
     }

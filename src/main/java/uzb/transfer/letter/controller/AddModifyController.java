@@ -5,8 +5,10 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import uzb.transfer.letter.utils.Additions;
+import uzb.transfer.letter.utils.Db;
 import uzb.transfer.letter.utils.Window;
 import uzb.transfer.letter.utils.Windows;
 
@@ -27,6 +29,7 @@ public class AddModifyController extends Additions implements Initializable {
     @FXML
     private TextField toCLetter;
 
+    //TODO make input only one character letter to add this make implement in the future
     @FXML
     private TextField toLetter;
 
@@ -36,7 +39,10 @@ public class AddModifyController extends Additions implements Initializable {
     @FXML
     private Button cancel;
 
+    private String directionTransfer;
 
+    @FXML
+    private Label info;
 
 
     @Override
@@ -46,6 +52,7 @@ public class AddModifyController extends Additions implements Initializable {
 
     private void clicks() {
            save.setOnAction(event -> {
+                Db.readFromFile(Db.letterFormation);
 
            });
            cancel.setOnAction(event -> {
@@ -66,5 +73,14 @@ public class AddModifyController extends Additions implements Initializable {
                !fromLetter.getText().isEmpty()  ||
                !toLetter.getText().isEmpty()    ||
                !toCLetter.getText().isEmpty());
+    }
+
+    public String getDirectionTransfer() {
+        return directionTransfer;
+    }
+
+    public void setDirectionTransfer(String directionTransfer) {
+        this.directionTransfer = directionTransfer;
+        info.setText(info.getText() +  "   " + this.directionTransfer);
     }
 }

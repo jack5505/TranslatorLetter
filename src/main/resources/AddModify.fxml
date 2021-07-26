@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -18,5 +19,6 @@
       <JFXTextField fx:id="toLetter" layoutX="436.0" layoutY="121.0" prefHeight="27.0" prefWidth="45.0" />
       <JFXButton fx:id="save" layoutX="124.0" layoutY="228.0" style="-fx-border-color: green;" text="Save or update" />
       <JFXButton fx:id="cancel" layoutX="368.0" layoutY="228.0" prefHeight="27.0" prefWidth="102.0" style="-fx-border-color: red;" text="Cancel" />
+      <Label fx:id="info" layoutX="40.0" layoutY="309.0" prefHeight="17.0" prefWidth="532.0" text="shu nastroykani  o`zgarishi bo`lib turibdi" />
    </children>
 </AnchorPane>
