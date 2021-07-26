@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uzb.transfer.letter.controller.AddModifyController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="115.0" layoutY="34.0" prefHeight="17.0" prefWidth="308.0" text="Add new Letter" textAlignment="CENTER" />
+      <JFXTextField fx:id="fromCLetter" layoutX="43.0" layoutY="121.0" prefHeight="27.0" prefWidth="45.0" />
+      <Label layoutX="43.0" layoutY="88.0" prefHeight="17.0" prefWidth="119.0" text="Capital Letter From" />
+      <Label layoutX="188.0" layoutY="88.0" prefHeight="17.0" prefWidth="119.0" text=" Letter From" />
+      <JFXTextField fx:id="fromLetter" layoutX="188.0" layoutY="121.0" prefHeight="27.0" prefWidth="45.0" />
+      <JFXTextField fx:id="toCLetter" layoutX="291.0" layoutY="121.0" prefHeight="27.0" prefWidth="45.0" />
+      <Label layoutX="436.0" layoutY="88.0" prefHeight="17.0" prefWidth="119.0" text=" Letter  To" />
+      <Label layoutX="291.0" layoutY="88.0" prefHeight="17.0" prefWidth="119.0" text="Capital Letter To" />
+      <JFXTextField fx:id="toLetter" layoutX="436.0" layoutY="121.0" prefHeight="27.0" prefWidth="45.0" />
+      <JFXButton fx:id="save" layoutX="124.0" layoutY="228.0" style="-fx-border-color: green;" text="Save or update" />
+      <JFXButton fx:id="cancel" layoutX="368.0" layoutY="228.0" prefHeight="27.0" prefWidth="102.0" style="-fx-border-color: red;" text="Cancel" />
+   </children>
+</AnchorPane>
