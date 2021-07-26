@@ -34,7 +34,10 @@ public class ConfirmationController extends Additions implements Initializable  
                 if(switcher.equals("add") && this.event != null){
                     closeWithEvent(this.event);
                 }
-                closeWithEvent(event);
+                if(switcher.equals("main")){
+                    System.exit(0);
+                }
+            closeWithEvent(event);
         });
 
         no.setOnAction(event -> {

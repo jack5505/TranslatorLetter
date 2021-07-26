@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import uzb.transfer.letter.utils.Additions;
 import uzb.transfer.letter.utils.Window;
 import uzb.transfer.letter.utils.Windows;
 
@@ -14,7 +15,7 @@ import uzb.transfer.letter.utils.Windows;
  *  @author Sabirov Jakhongir
  *
  */
-public class AddModifyController implements Initializable {
+public class AddModifyController extends Additions implements Initializable {
 
 
     @FXML
@@ -55,9 +56,8 @@ public class AddModifyController implements Initializable {
                    controller.setEvent(event);
                    window.show();
                }
-
-
-
+               else
+                    super.closeWithEvent(event);
            });
     }
 

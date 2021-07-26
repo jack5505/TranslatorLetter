@@ -63,8 +63,11 @@ public class HeaderController implements Initializable {
 
     private void callOtherScreen(String title, String url,StageStyle style){
         Window window = new Window(title, url);
-        if(style != null)
+        if(style != null){
             window.setStageStyle(style);
+            ConfirmationController controller = window.getController();
+            controller.setSwitcher("main");
+        }
         window.show();
 
 
