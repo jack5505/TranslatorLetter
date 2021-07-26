@@ -53,7 +53,13 @@ public class AddModifyController extends Additions implements Initializable {
     private void clicks() {
            save.setOnAction(event -> {
                 Db.readFromFile(Db.letterFormation);
-
+                //TODO need to check if all field filled or not
+                Db.writeIntoFile(fromCLetter.getText(),fromLetter.getText(),toCLetter.getText(),toLetter.getText(),directionTransfer);
+                super.makeEmpty(fromLetter);
+                super.makeEmpty(fromCLetter);
+                super.makeEmpty(toCLetter);
+                super.makeEmpty(toLetter);
+                info.setText(info.getText() + "  " + " YOZILDI ");
            });
            cancel.setOnAction(event -> {
                Window window = new Window("are you sure ?" , Windows.Main.confirmation);

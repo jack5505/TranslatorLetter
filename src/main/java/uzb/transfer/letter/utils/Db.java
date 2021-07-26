@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /*
@@ -49,6 +50,15 @@ public class Db {
             e.printStackTrace();
         }
         return "no";
+    }
+    public static void writeIntoFile(String fromC,String from, String toC, String to, String direction){
+        try {
+            PrintWriter printWriter = new PrintWriter(new File(letterFormation));
+            printWriter.append(fromC +" " + from +" " + toC + " " + to + " " + direction);
+            printWriter.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 }
