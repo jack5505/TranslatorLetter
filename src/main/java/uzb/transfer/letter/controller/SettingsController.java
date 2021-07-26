@@ -15,8 +15,11 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import uzb.transfer.letter.utils.Db;
+import uzb.transfer.letter.utils.Window;
+import uzb.transfer.letter.utils.Windows;
 
 /*
  *
@@ -31,6 +34,10 @@ public class SettingsController implements Initializable {
     @FXML
     private TableView table;
 
+    @FXML
+    private Button add;
+
+
     @Override public void initialize(URL location, ResourceBundle resources) {
            combo.getItems().addAll(readFromText());
            combo.valueProperty().addListener(new ChangeListener() {
@@ -44,6 +51,11 @@ public class SettingsController implements Initializable {
                }
            });
            combo.getSelectionModel().select(Db.checkSelectedLanguage());
+
+           add.setOnAction(event -> {
+               Window window = new Window("Add or modify", Windows.Main.add);
+               window.show();
+           });
     }
 
     private List<String> readFromText() {

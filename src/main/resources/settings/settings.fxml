@@ -23,5 +23,6 @@
             <TableColumn maxWidth="108.0" minWidth="108.0" prefWidth="108.0" text="To letter" />
         </columns>
       </TableView>
+      <JFXButton fx:id="add" layoutX="350.0" layoutY="110.0" style="-fx-border-color: red;" text="Add new Letter" />
    </children>
 </AnchorPane>

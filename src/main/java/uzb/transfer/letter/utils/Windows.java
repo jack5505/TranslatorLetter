@@ -12,6 +12,7 @@ public interface Windows {
         String confirmation = "ask/confirmation.fxml";
         String settings = "settings/settings.fxml";
         String about = "about/about.fxml";
+        String add = "AddModify.fxml";
     }
 
 }
