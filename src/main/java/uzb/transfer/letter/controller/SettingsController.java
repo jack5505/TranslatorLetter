@@ -107,16 +107,17 @@ public class SettingsController extends Additions implements Initializable {
     }
 
 
-
+    // Clear all data from Table
     public void clearTable(){
         table.getItems().clear();
     }
 
+    // add new Data into table by direction
     public void fillTable(String direction){
         table.getItems().addAll(Db.getAllLanguages(direction));
     }
 
-
+    // combile two methods method
     public void clearAndFillTable(String direction){
         clearTable();
         fillTable(direction);
