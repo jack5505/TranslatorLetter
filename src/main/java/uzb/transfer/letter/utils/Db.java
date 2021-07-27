@@ -66,7 +66,40 @@ public class Db {
 
     public static List<Language> getAllLanguages(String direction){
         System.out.println(direction);
-        return new ArrayList<>();
+        Scanner cin = readFromFile(letterFormation);
+        List<Language> list = new ArrayList<>();
+        int cnt = 0;
+        Language language = null;
+        while (cin.hasNext())
+        {
+            String text = cin.next();
+            System.out.println(text);
+            if(cnt % 6 == 0){
+                language = new Language();
+                language.setId(cnt +" ");
+                cnt++;
+            }
+            if(cnt % 6 == 1){
+                language.setFromCapitalLetter(text);
+            }
+            if(cnt % 6 == 2){
+                language.setFromLetter(text);
+            }
+            if(cnt % 6 == 3){
+                language.setToCapitalLetter(text);
+            }
+            if(cnt % 6 == 4){
+                language.setToLetter(text);
+            }
+            if(cnt % 6 == 5){
+                System.out.println("[" + text + "]  [" + direction +"]");
+                if(text.equals(direction)){
+                    list.add(language);
+                }
+            }
+            cnt++;
+        }
+        return list;
     }
 
 

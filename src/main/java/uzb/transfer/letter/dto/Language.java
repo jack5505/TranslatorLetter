@@ -21,6 +21,9 @@ public class Language {
         this.toLetter = toLetter;
     }
 
+    public Language() {
+    }
+
     public String getId() {
         return id;
     }
