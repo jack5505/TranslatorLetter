@@ -77,7 +77,8 @@ public class AddModifyController extends Additions implements Initializable {
                     super.closeWithEvent(event);
            });
     }
-
+    //Todo refactoring this class
+    //Todo delete or modify
     private boolean checkFilled() {
         return (!fromCLetter.getText().isEmpty() ||
                !fromLetter.getText().isEmpty()  ||
