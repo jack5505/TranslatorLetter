@@ -5,7 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import uzb.transfer.letter.dto.Language;
 
 /*
  *
@@ -60,5 +63,12 @@ public class Db {
             e.printStackTrace();
         }
     }
+
+    public static List<Language> getAllLanguages(String direction){
+        System.out.println(direction);
+        return new ArrayList<>();
+    }
+
+
 
 }
