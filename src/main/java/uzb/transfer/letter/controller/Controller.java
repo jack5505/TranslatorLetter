@@ -16,6 +16,7 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import uzb.transfer.letter.utils.Additions;
+import uzb.transfer.letter.utils.GenerateWord;
 
 public class Controller extends Additions implements Initializable {
 
@@ -45,7 +46,10 @@ public class Controller extends Additions implements Initializable {
             text.setText(event.getDragboard().getFiles().stream().map(File::getAbsolutePath).collect(Collectors.joining("\n")));
         });
 
-        
+        clickMe.setOnAction(event -> {
+            //Lets image only we will update word file
+            GenerateWord.changeLetter(text.getText());
+        });
     }
 
 

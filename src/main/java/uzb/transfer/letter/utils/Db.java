@@ -8,7 +8,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import uzb.transfer.letter.dto.Language;
 
@@ -22,6 +24,7 @@ public class Db {
     public static final String defaultSettings = "selected.txt";
     public static final String letterFormation = "letters.txt";
     public static List<Language> list = new ArrayList<>();
+    public static Map<String,String> hashmap = new HashMap<>();
 
     public static Scanner readFromFile(String text){
         try {
