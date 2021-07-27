@@ -14,5 +14,7 @@
        <fx:include source="headers/header.fxml" />
       <Label layoutX="125.0" layoutY="60.0" prefHeight="17.0" prefWidth="147.0" text="Select tranfer Direction" />
       <JFXComboBox fx:id="selectedLanguage" layoutX="349.0" layoutY="55.0" prefHeight="27.0" prefWidth="195.0" />
+      <StackPane fx:id="drag" layoutX="240.0" layoutY="203.0" prefHeight="150.0" prefWidth="315.0" style="-fx-border-color: red;" />
+      <JFXButton fx:id="clickMe" layoutX="324.0" layoutY="440.0" text="Magic happens here" />
    </children>
 </AnchorPane>
