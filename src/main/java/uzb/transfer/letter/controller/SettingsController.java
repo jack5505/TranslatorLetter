@@ -65,7 +65,7 @@ public class SettingsController extends Additions implements Initializable {
 
 
     @Override public void initialize(URL location, ResourceBundle resources) {
-           combo.getItems().addAll(readFromText());
+           super.loadLanguages(combo);
            combo.valueProperty().addListener(new ChangeListener() {
                @Override public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                    //This begining of this
@@ -76,7 +76,7 @@ public class SettingsController extends Additions implements Initializable {
                    }
                }
            });
-           combo.getSelectionModel().select(Db.checkSelectedLanguage());
+
 
 
            add.setOnAction(event -> {
@@ -97,16 +97,7 @@ public class SettingsController extends Additions implements Initializable {
 
     }
 
-    private List<String> readFromText() {
-            List<String> list = new ArrayList<>();
-            Scanner scanner = Db.readFromFile(Db.transferDirectionList);
-            if(scanner != null){
-              while (scanner.hasNext()){
-                  list.add(scanner.nextLine());
-              }
-            }
-        return list;
-    }
+
 
 
     // Clear all data from Table

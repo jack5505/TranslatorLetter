@@ -109,5 +109,17 @@ public class Db {
     }
 
 
+    public static List<String> readFromText() {
+        List<String> list = new ArrayList<>();
+        Scanner scanner = Db.readFromFile(Db.transferDirectionList);
+        if(scanner != null){
+            while (scanner.hasNext()){
+                list.add(scanner.nextLine());
+            }
+        }
+        return list;
+    }
+
+
 
 }

@@ -1,5 +1,8 @@
 package uzb.transfer.letter.utils;
 
+import com.jfoenix.controls.JFXComboBox;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
@@ -28,5 +31,14 @@ public class Additions <S,T> {
         column.setCellValueFactory(new PropertyValueFactory<S,T>(name));
     }
 
+
+    protected void loadLanguages(JFXComboBox selected){
+        selected.getItems().addAll(Db.readFromText());
+        selectLanguage(selected);
+    }
+
+    private void selectLanguage(JFXComboBox selected) {
+        selected.getSelectionModel().select(Db.checkSelectedLanguage());
+    }
 
 }
