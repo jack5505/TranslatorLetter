@@ -1,8 +1,10 @@
 package uzb.transfer.letter.utils;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -55,12 +57,15 @@ public class Db {
         return "no";
     }
     public static void writeIntoFile(String fromC,String from, String toC, String to, String direction){
-        //TODO need to add from newLine
         try {
-            PrintWriter printWriter = new PrintWriter(new File(letterFormation));
-            printWriter.append(fromC +" " + from +" " + toC + " " + to + " " + direction);
+            // Bufferedwriter new FileWriter in constructor append make it true
+            BufferedWriter printWriter = new BufferedWriter(new FileWriter(new File(letterFormation),true));
+            printWriter.append(fromC +" " + from +" " + toC + " " + to + " " + direction + "\n");
+            //printWriter.append(fromC +" " + from +" " + toC + " " + to + " " + direction);
             printWriter.close();
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
