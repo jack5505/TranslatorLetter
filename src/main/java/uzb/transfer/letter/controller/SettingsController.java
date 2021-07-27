@@ -82,6 +82,7 @@ public class SettingsController extends Additions implements Initializable {
            add.setOnAction(event -> {
                Window window = new Window("Add or modify", Windows.Main.add);
                AddModifyController addModifyController = window.getController();
+               addModifyController.setSettingsController(this);
                addModifyController.setDirectionTransfer(combo.getSelectionModel().getSelectedItem().toString());
                window.show();
            });
@@ -92,7 +93,7 @@ public class SettingsController extends Additions implements Initializable {
            super.setColumn(toCapitalLetter,"toCapitalLetter");
            super.setColumn(toLetter,"toLetter");
            fillTable(combo.getSelectionModel().getSelectedItem().toString());
-           
+
 
     }
 

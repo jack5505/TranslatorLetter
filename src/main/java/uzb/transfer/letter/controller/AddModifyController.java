@@ -45,6 +45,9 @@ public class AddModifyController extends Additions implements Initializable {
     private Label info;
 
 
+    private SettingsController settingsController;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
             clicks();
@@ -60,6 +63,7 @@ public class AddModifyController extends Additions implements Initializable {
                 super.makeEmpty(toCLetter);
                 super.makeEmpty(toLetter);
                 info.setText(info.getText() + "  " + " YOZILDI ");
+                settingsController.clearAndFillTable(directionTransfer);
            });
            cancel.setOnAction(event -> {
                Window window = new Window("are you sure ?" , Windows.Main.confirmation);
@@ -88,5 +92,13 @@ public class AddModifyController extends Additions implements Initializable {
     public void setDirectionTransfer(String directionTransfer) {
         this.directionTransfer = directionTransfer;
         info.setText(info.getText() +  "   " + this.directionTransfer);
+    }
+
+    public SettingsController getSettingsController() {
+        return settingsController;
+    }
+
+    public void setSettingsController(SettingsController settingsController) {
+        this.settingsController = settingsController;
     }
 }
