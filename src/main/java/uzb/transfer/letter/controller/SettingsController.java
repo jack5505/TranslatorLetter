@@ -72,7 +72,8 @@ public class SettingsController extends Additions implements Initializable {
                    if(oldValue == null){
 
                    }else{
-                       // this change value
+                       table.getItems().clear();
+                       table.getItems().addAll(Db.getAllLanguages(newValue.toString()));
                    }
                }
            });

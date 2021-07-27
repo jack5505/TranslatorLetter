@@ -55,6 +55,7 @@ public class Db {
         return "no";
     }
     public static void writeIntoFile(String fromC,String from, String toC, String to, String direction){
+        //TODO need to add from newLine
         try {
             PrintWriter printWriter = new PrintWriter(new File(letterFormation));
             printWriter.append(fromC +" " + from +" " + toC + " " + to + " " + direction);
