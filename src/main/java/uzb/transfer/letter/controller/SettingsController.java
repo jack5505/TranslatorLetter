@@ -91,7 +91,8 @@ public class SettingsController extends Additions implements Initializable {
            super.setColumn(fromLetter,"fromLetter");
            super.setColumn(toCapitalLetter,"toCapitalLetter");
            super.setColumn(toLetter,"toLetter");
-           table.getItems().addAll(Db.getAllLanguages(combo.getSelectionModel().getSelectedItem().toString()));
+           fillTable(combo.getSelectionModel().getSelectedItem().toString());
+           
 
     }
 
