@@ -72,8 +72,7 @@ public class SettingsController extends Additions implements Initializable {
                    if(oldValue == null){
 
                    }else{
-                       table.getItems().clear();
-                       table.getItems().addAll(Db.getAllLanguages(newValue.toString()));
+                       clearAndFillTable(newValue.toString());
                    }
                }
            });
@@ -106,6 +105,23 @@ public class SettingsController extends Additions implements Initializable {
             }
         return list;
     }
+
+
+
+    public void clearTable(){
+        table.getItems().clear();
+    }
+
+    public void fillTable(String direction){
+        table.getItems().addAll(Db.getAllLanguages(direction));
+    }
+
+
+    public void clearAndFillTable(String direction){
+        clearTable();
+        fillTable(direction);
+    }
+
 
 
 
