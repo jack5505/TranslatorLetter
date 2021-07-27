@@ -21,6 +21,7 @@ public class Db {
     public static final String transferDirectionList = "db.txt";
     public static final String defaultSettings = "selected.txt";
     public static final String letterFormation = "letters.txt";
+    public static List<Language> list = new ArrayList<>();
 
     public static Scanner readFromFile(String text){
         try {
@@ -73,13 +74,12 @@ public class Db {
     public static List<Language> getAllLanguages(String direction){
         System.out.println(direction);
         Scanner cin = readFromFile(letterFormation);
-        List<Language> list = new ArrayList<>();
+        list = new ArrayList<>();
         int cnt = 0;
         Language language = null;
         while (cin.hasNext())
         {
             String text = cin.next();
-            System.out.println(text);
             if(cnt % 6 == 0){
                 language = new Language();
                 language.setId(cnt +" ");
@@ -98,7 +98,7 @@ public class Db {
                 language.setToLetter(text);
             }
             if(cnt % 6 == 5){
-                System.out.println("[" + text + "]  [" + direction +"]");
+                //System.out.println("[" + text + "]  [" + direction +"]");
                 if(text.equals(direction)){
                     list.add(language);
                 }
