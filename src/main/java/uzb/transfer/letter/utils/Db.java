@@ -123,6 +123,25 @@ public class Db {
         return list;
     }
 
+    public static void getIntoHashMap(){
+        if(!list.isEmpty()){
+            for (Language language : list) {
+                hashmap.put(language.getFromCapitalLetter(),language.getToCapitalLetter());
+                hashmap.put(language.getFromLetter(),language.getToLetter());
+            }
+        }
+    }
+
+    /*
+     * This method will use when you want to rereset into new language
+     * and value will be appear into HashMap
+     */
+    public static void resetIntoNewLanguage(String direction){
+            getAllLanguages(direction);
+            getIntoHashMap();
+
+    }
+
 
 
 }
